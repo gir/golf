@@ -1,0 +1,32 @@
+<p>
+  <b>Title:</b>
+  <%=h @challenge.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @challenge.description %>
+</p>
+
+<p>
+  <b>Submitions:</b>
+  <div>
+    <%= "No submitions yet." if @challenge.submitions.empty? %>
+    <% @challenge.submitions.each do |submition| %>
+      <%= render :partial => "submitions/submition", :locals => { :submition => submition } %>
+    <% end %>
+  </div>
+</p>
+
+<% form_for(@submition) do |f| %>
+  <%= f.error_messages %>
+
+  <%= render :partial => "submitions/form", :locals => { :submition => @submition, :languages => @languages, :f => f } %>
+  <%= hidden_field_tag :challenge_id, @challenge.id %>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+<%= link_to 'Back', challenges_path %>
