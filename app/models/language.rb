@@ -1,3 +1,3 @@
 class Language < ActiveRecord::Base
-  has_many :submitions
+  has_many :submissions
 end

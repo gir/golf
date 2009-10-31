@@ -1,9 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :challenges
 
-  map.resources :submitions
+  map.resources :submissions
 
   map.resources :languages
+
+  map.root :controller => 'challenges'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

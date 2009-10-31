@@ -11,17 +11,17 @@
 <p>
   <b>Submitions:</b>
   <div>
-    <%= "No submitions yet." if @challenge.submitions.empty? %>
-    <% @challenge.submitions.each do |submition| %>
-      <%= render :partial => "submitions/submition", :locals => { :submition => submition } %>
+    <%= "No submissions yet." if @challenge.submissions.empty? %>
+    <% @challenge.submissions.each do |submission| %>
+      <%= render :partial => "submissions/submission", :locals => { :submission => submission } %>
     <% end %>
   </div>
 </p>
 
-<% form_for(@submition) do |f| %>
+<% form_for(@submission) do |f| %>
   <%= f.error_messages %>
 
-  <%= render :partial => "submitions/form", :locals => { :submition => @submition, :languages => @languages, :f => f } %>
+  <%= render :partial => "submissions/form", :locals => { :submission => @submission, :languages => @languages, :f => f } %>
   <%= hidden_field_tag :challenge_id, @challenge.id %>
   <p>
     <%= f.submit 'Submit' %>

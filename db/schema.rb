@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20091031005326) do
     t.datetime "updated_at"
   end
 
-  create_table "submitions", :force => true do |t|
+  create_table "submissions", :force => true do |t|
     t.string   "name"
     t.text     "code"
     t.text     "comment"

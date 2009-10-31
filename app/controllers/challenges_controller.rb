@@ -14,7 +14,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/1.xml
   def show
     @challenge = Challenge.find(params[:id])
-    @submition = Submition.new
+    @submission = Submission.new
     @languages = Language.all
 
     respond_to do |format|

@@ -1,4 +1,4 @@
-class Submition < ActiveRecord::Base
+class Submission < ActiveRecord::Base
   belongs_to :language
   belongs_to :challenge
 

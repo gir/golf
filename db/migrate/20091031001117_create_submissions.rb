@@ -1,6 +1,6 @@
-class CreateSubmitions < ActiveRecord::Migration
+class CreateSubmissions < ActiveRecord::Migration
   def self.up
-    create_table :submitions do |t|
+    create_table :submissions do |t|
       t.string :name
       t.text :code
       t.text :comment
@@ -13,6 +13,6 @@ class CreateSubmitions < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :submitions
+    drop_table :submissions
   end
 end
