@@ -8,8 +8,12 @@ class Submission < ActiveRecord::Base
 
   before_create :score_this
 
-private
+  private
   def score_this
-    self.score = self.code.size
+    score = 0
+    self.code.each_char() do |x|
+      score += x=~/[a-z0-9.,\/\\`;'=-\[\] ]/ ? 1:2
+    end
+    self.score = score
   end
 end
