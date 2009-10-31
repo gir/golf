@@ -1,0 +1,24 @@
+<p>
+  <b>Title:</b>
+  <%=h challenge.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h challenge.description %>
+</p>
+
+<p>
+  <b>Example output:</b>
+  <%=h challenge.example_output %>
+</p>
+
+<p>
+  <b>Submitions:</b>
+  <div>
+    <%= "No submissions yet." if challenge.submissions.empty? %>
+    <% challenge.submissions.each do |submission| %>
+      <%= render :partial => "submissions/submission", :locals => { :submission => submission } %>
+    <% end %>
+  </div>
+</p>

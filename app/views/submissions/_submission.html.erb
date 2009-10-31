@@ -3,4 +3,5 @@
   <p>Language: <%= submission.language.name %></p>
   <p>Score: <%= submission.score %></p>
   <p>Code: <%= submission.code %></p>
+  <p>This code <%= submission.passes? ? "<b>passes</b>." : "<b>does not</b> pass."%></p>
 </div>

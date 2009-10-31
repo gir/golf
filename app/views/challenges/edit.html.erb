@@ -3,14 +3,7 @@
 <% form_for(@challenge) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
+  <%= render :partial => "challenges/form", :locals => { :f => f } %>
   <p>
     <%= f.submit 'Update' %>
   </p>
