@@ -1,0 +1,39 @@
+%h1 Listing challenges
+
+.container
+  = @challenges.each do |challenge|
+    .problem.columns
+      .container
+        .score.column.fixed{:style=>"width:80px;"}
+          .container
+            .number
+            lowest score
+        .answers.column.fixed{:style=>"width:60px;"}
+          .conainer
+            .number
+            answers
+        .title.column.elastic
+          %h2=link_to(challenge.title, challenge)
+          .description
+            =challenge.description
+      
+
+      
+  
+
+%table
+  %tr
+    %th Title
+    %th Description
+
+= @challenges.each do |challenge|
+  %tr
+    %td= challenge.title 
+    %td= challenge.description
+    %td= link_to 'Show', challenge
+    %td= link_to 'Edit', edit_challenge_path(challenge)
+    %td= link_to 'Destroy', challenge, :confirm => 'Are you sure?', :method => :delete 
+
+%br
+
+= link_to 'New challenge', new_challenge_path
