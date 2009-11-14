@@ -10,10 +10,12 @@
         .score.column.fixed
           .container
             .number
+              %p=challenge.lowest_score
             .label lowest score
         .answers.column.fixed
           .conainer
             .number
+              %p=challenge.number_of_answers
             .label answers
         .title.column.elastic
           %a{:href=>url_for(challenge)}
