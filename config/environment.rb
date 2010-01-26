@@ -4,9 +4,6 @@ RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
-# Allow HAML templates for Action Mailer.
-ActionMailer::Base.register_template_extension('haml')
-
 # Load application and environment constants.
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/config.yml")[RAILS_ENV]
 
@@ -25,7 +22,7 @@ Rails::Initializer.run do |config|
 
   # Secret key for verifying cookie session data integrity.
   config.action_controller.session = {
-    :session_key => APP_CONFIG['settings']['session_key']
+    :session_key => APP_CONFIG['settings']['session_key'],
     :secret      => APP_CONFIG['settings']['secret']
   }
 end

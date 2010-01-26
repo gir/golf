@@ -3,6 +3,8 @@ development:
     name: Programmer Golf
     session_key: _your_application_session
     secret: spa4qtsjn1t8ois0nb6htja4lhumh5o9f664j49svgl3cxn708thwl56cd0y
+    admin_email: admin
+    admin_password: password
   restful_auth:
     site_key: makq1s9kwa5qqj4nozcn9xq67m84hhdmkjjqzfb2
     stretches: 10
