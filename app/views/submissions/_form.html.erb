@@ -3,10 +3,6 @@
   <%= select("language", "id", languages.map { |l| [l.name, l.id] }, { :prompt => "-- Select a language --" }) %>
 </p>
 <p>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-</p>
-<p>
   <%= f.label :code %><br />
   <%= f.text_area :code %>
 </p>

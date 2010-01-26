@@ -1,5 +1,5 @@
 <div>
-  <p>By: <%= submission.name %>@<%= submission.created_at %></p>
+  <p>By: <%= submission.user.login %>@<%= submission.created_at %></p>
   <p>Language: <%= submission.language.name %></p>
   <p>Score: <%= submission.score %></p>
   <p>Code: <%= submission.code %></p>

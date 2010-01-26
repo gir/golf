@@ -1,5 +1,6 @@
 class Challenge < ActiveRecord::Base
   has_many :submissions
+  belongs_to :user
 
   def lowest_score
     score = Submission.find(:first, :select=>"score", :order=>"score", :conditions=>{:challenge_id=>self.id})

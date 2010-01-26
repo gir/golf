@@ -46,6 +46,7 @@ class SubmissionsController < ApplicationController
     @challenge = Challenge.find(params[:challenge_id])
     @submission.language = Language.find(params[:language][:id])
     @submission.challenge = @challenge
+    @submission.user = current_user
 
     respond_to do |format|
       if @submission.save

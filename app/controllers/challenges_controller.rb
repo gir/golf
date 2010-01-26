@@ -45,6 +45,7 @@ class ChallengesController < ApplicationController
   # POST /challenges.xml
   def create
     @challenge = Challenge.new(params[:challenge])
+    @challenge.user = current_user
 
     respond_to do |format|
       if @challenge.save
