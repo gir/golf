@@ -5,10 +5,12 @@ development:
     secret: spa4qtsjn1t8ois0nb6htja4lhumh5o9f664j49svgl3cxn708thwl56cd0y
     admin_email: admin
     admin_password: password
+    domain: yourapplication.com
   restful_auth:
     site_key: makq1s9kwa5qqj4nozcn9xq67m84hhdmkjjqzfb2
     stretches: 10
   mail:
+    delivery_method: :stmp
     address: mail.yourapplication.com
     port: 25
     domain: yourapplication.com
@@ -16,3 +18,5 @@ development:
     user_name: foo@yourapplciation.com
     password: accountpassword
     sender: donotreply@yourapplication.com
+    location: /usr/sbin/sendmail
+    arguments: -i -t -f do-not-reply@jjcm.org

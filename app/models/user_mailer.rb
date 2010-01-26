@@ -15,10 +15,11 @@ class UserMailer < ActionMailer::Base
 
   protected
     def setup_email(user)
-      @recipients  = "#{user.email}"
-      @from        = APP_CONFIG['mail']['sender']
-      @subject     = "#{APP_CONFIG['settings']['name']} - "
-      @sent_on     = Time.now
-      @body[:user] = user
+      @recipients   = "#{user.email}"
+      @from         = "noreply <#{APP_CONFIG['mail']['sender']}>"
+      headers       "Reply-to" => APP_CONFIG['mail']['sender']
+      @subject      = "#{APP_CONFIG['settings']['name']} - "
+      @sent_on      = Time.now
+      @body[:user]  = user
     end
 end
