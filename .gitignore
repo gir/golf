@@ -4,6 +4,7 @@ tmp/*
 log/*
 *.swp
 db/schema.rb
+golf.sql
 test/*
 features/*
 vendor/plugins/*

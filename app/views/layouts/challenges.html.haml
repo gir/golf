@@ -6,6 +6,10 @@
         position: absolute
         left: 15px
         top: 13px
+      #user_bar
+        position: absolute
+        right: 15px
+        top: 8px
       #navigation
         margin-top: 27px
         height: 30px
@@ -95,9 +99,12 @@
   %body
     #logo
       =image_tag 'codeSucks.gif'
+    #user_bar
+      =render :partial => "users/user_bar"
     #navigation
       %a#challenges{:href=>url_for(:controller=>'challenges', :action=>'index')} Challenges
       %a#scoreboard{:href=>url_for(:controller=>'challenges', :action=>'index')} Scoreboard
-      %a#Submit{:href=>url_for(:controller=>'challenges', :action=>'new')} Submit
+      - if !current_user.blank? && current_user.has_role?('admin')
+        %a#Submit{:href=>url_for(:controller=>'challenges', :action=>'new')} Submit
     %p{:style=>'color: green'}= flash[:notice]
     = yield
