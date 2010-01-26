@@ -1,0 +1,51 @@
+#logo {
+  margin-left: 20px; }
+
+#problems {
+  margin-top: 62px; }
+  #problems .problem {
+    background-color: #d7d7d7;
+    margin-top: 3px;
+    font-family: arial, sans-serif;
+    font-size: 10px;
+    height: 55px; }
+    #problems .problem .container .score {
+      width: 70px;
+      text-align: center; }
+      #problems .problem .container .score .number {
+        margin: 5px;
+        width: 60px;
+        height: 30px;
+        border: 1px solid #fff;
+        background-color: #81b6c6; }
+      #problems .problem .container .score .label {
+        line-height: 0.7; }
+    #problems .problem .container .answers {
+      width: 55px;
+      text-align: center; }
+      #problems .problem .container .answers .number {
+        margin: 5px;
+        width: 45px;
+        height: 30px;
+        border: 1px solid #fff;
+        background-color: #81b6c6; }
+      #problems .problem .container .answers .label {
+        line-height: 0.7; }
+    #problems .problem .container .title {
+      margin-left: 29px;
+      margin-top: 1px; }
+      #problems .problem .container .title a {
+        color: #000;
+        text-decoration: none; }
+        #problems .problem .container .title a h2 {
+          font-weight: normal;
+          font-size: 18px;
+          margin-top: 3px;
+          margin-bottom: 5px; }
+      #problems .problem .container .title a:hover {
+        text-decoration: underline; }
+      #problems .problem .container .title .description {
+        font-size: 10px;
+        line-height: 1; }
+  #problems .alt {
+    background-color: #fafafa; }
