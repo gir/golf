@@ -1,4 +1,6 @@
 class LanguagesController < ApplicationController
+  # Require the user to be an admin to post a language.
+  require_role "admin", :except => [:index, :show]
   # GET /languages
   # GET /languages.xml
   def index
