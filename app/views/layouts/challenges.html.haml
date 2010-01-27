@@ -1,6 +1,7 @@
 !!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang=>"en"}
   %style{:type=>"text/css"}
+    =yield :styles
     :sass
       #logo
         position: absolute
@@ -41,7 +42,7 @@
           margin-top: 3px
           font-family: arial, sans-serif
           font-size: 10px
-          height: 55px
+          min-height: 55px
           .container .score
             width= !scoreSize
             text-align: center

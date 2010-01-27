@@ -19,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :languages
 
-  map.root :controller => 'challenges'
+  map.root :controller => 'challenges', :action => 'index'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

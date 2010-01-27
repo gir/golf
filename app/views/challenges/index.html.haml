@@ -3,6 +3,8 @@
 
 #challenges.container
   -alt=false
+  -if @challenges.blank?
+    %div There are no challenges currently.
   -@challenges.each do |challenge|
   -alt=!alt
     .challenge.columns{:class=>cycle('','alt')}

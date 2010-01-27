@@ -1,0 +1,51 @@
+-content_for :styles do
+  :sass
+    !scoreSize = 70px
+    .submission
+      margin: 10px
+      border-bottom: #b7b7b7 1px dotted
+      padding: 10px
+    .user-link
+      margin-left: 5px
+      font-size: 14px
+      text-decoration: none
+      color: #3366cc
+    .time
+      margin-left: 5px
+      margin-top: -10px
+      font-size: 10px
+      color: #a0a0a0
+    .container .score
+      width= !scoreSize
+      text-align: center
+      .number
+        p
+          font-weight: bold
+          font-size: 16px
+          margin-top: 5px
+        margin: 5px
+        width= !scoreSize - 10px
+        height: 30px
+        border: 1px solid #000
+        background-color: #81b6c6 
+    .code
+      padding: 10px
+      background-color: #535155
+      color: #fff
+    .language
+      font-size: 20px
+      font-weight: bold
+  
+.submission.on-2.columns
+  .user.fixed.column{:style=>'width:250px'}
+    %p
+      %a.user-link{:href=>user_path(submission.user)}==#{submission.user.login}
+    %p.time==#{submission.created_at.to_s}
+    .container
+      .score.column.fixed
+        .container
+          .number
+            %p=submission.score
+  .content.elastic.column
+    %p.language=submission.language.name
+    .code=submission.code
