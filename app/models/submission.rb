@@ -5,11 +5,13 @@ class Submission < ActiveRecord::Base
 
   validates_presence_of :language
   validates_presence_of :code
+  validates_presence_of :user
 
   before_create :score_and_check
 
   private
   def score_and_check
+    # Keystrokes are 1 usually, 2 for shifted characters.
     score = 0
     self.code.each_char() do |x|
       score += x=~/[a-z0-9.,\/\\`;'=-\[\] ]/ ? 1:2
