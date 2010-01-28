@@ -1,0 +1,6 @@
+%p
+  = select("language", "id", languages.map { |l| [l.name, l.id] }, { :prompt => "-- Select a language --" })
+%p
+  = f.label :code
+  %br
+  = f.text_area :code
