@@ -4,8 +4,19 @@ Golf is a Ruby on Rails based scoring/submission site for programmers' golf.
 There are many languages that may be entered and these languages can be edited
 as seen fit.
 
+TODO:
+- Automatic verification of submitted code.
+- Better user features.
+  - Administration.
+  - User profiles.
+- Scoreboard.
+- Layout.
+- More Specs.
+
 To run Golf (quick start):
-- Copy the config/database.yml.example to config/database.yml and edit it to
+- Copy/rename the config/database.yml.example to config/database.yml and edit
+  it to your liking.
+- Copy/rename the config/config.yml.example to config/config.yml and edit to
   your liking.
 - Create the databases required in MySQL.
 - Run rake db:migrate.
