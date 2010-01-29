@@ -2,7 +2,20 @@ Golf.
 
 Golf is a Ruby on Rails based scoring/submission site for programmers' golf.
 There are many languages that may be entered and these languages can be edited
-as seen fit.
+as seen fit. A demo can be seen running at http://golf.cssninja.org
+
+To run Golf (quick start):
+- git clone git://github.com/pwnies/golf.git
+- cd golf
+- git submodule init
+- git submodule update
+- Copy/rename the config/database.yml.example to config/database.yml and edit
+  it to your liking.
+- Copy/rename the config/config.yml.example to config/config.yml and edit to
+  your liking.
+- Create the databases required in MySQL.
+- Run rake db:migrate.
+- Run the server with ./script/server.
 
 TODO:
 - Automatic verification of submitted code.
@@ -13,11 +26,9 @@ TODO:
 - Layout.
 - More Specs.
 
-To run Golf (quick start):
-- Copy/rename the config/database.yml.example to config/database.yml and edit
-  it to your liking.
-- Copy/rename the config/config.yml.example to config/config.yml and edit to
-  your liking.
-- Create the databases required in MySQL.
-- Run rake db:migrate.
-- Run the server with ./script/server.
+PLUGINS:
+- HAML/SAAS
+- Restful Authentication
+  - http://github.com/technoweenie/restful-authentication
+- Role Requirement
+ - http://github.com/timcharper/role_requirement/
