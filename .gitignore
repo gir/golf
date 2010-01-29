@@ -7,4 +7,3 @@ db/schema.rb
 *.sql
 test/*
 features/*
-vendor/plugins/*
