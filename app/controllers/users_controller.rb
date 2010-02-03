@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
-  
+
+  # Make this use the default layout.
+  layout 'default'
 
   # render new.rhtml
   def new

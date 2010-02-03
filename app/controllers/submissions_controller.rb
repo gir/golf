@@ -4,7 +4,7 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(params[:submission])
     @challenge = Challenge.find(params[:challenge_id])
-    @submission.language = Language.find(params[:language][:id])
+    @submission.language = Language.find(params[:language][:id]) unless params[:language][:id].blank?
     @submission.challenge = @challenge
     @submission.user = current_user
 
@@ -13,7 +13,7 @@ class SubmissionsController < ApplicationController
         flash[:notice] = 'Submission was successfully created.'
         format.html { redirect_to(@challenge) }
       else
-        flash[:error] = 'There was an error durring submission.'
+        flash[:error] = @submission.errors.full_messages.join("<br />")
         format.html { redirect_to(@challenge) }
       end
     end

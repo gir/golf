@@ -1,4 +1,7 @@
 class LanguagesController < ApplicationController
+  # Make this use the default layout.
+  layout 'default'
+
   # Require the user to be an admin to post a language.
   require_role "admin", :except => [:index, :show]
   # GET /languages

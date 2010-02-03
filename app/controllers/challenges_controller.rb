@@ -1,4 +1,7 @@
 class ChallengesController < ApplicationController
+  # Make this use the default layout.
+  layout 'default'
+
   # Require the user to be an admin to post a challenge.
   require_role "admin", :except => [:index, :show]
   # GET /challenges
