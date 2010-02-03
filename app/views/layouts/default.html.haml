@@ -116,8 +116,10 @@
       =render :partial => "users/user_bar"
     #navigation
       %a#challenges{:href=>url_for(:controller=>'challenges', :action=>'index')} Challenges
-      %a#scoreboard{:href=>url_for(:controller=>'challenges', :action=>'index')} Scoreboard
+      %a#scoreboard{:href=>url_for(:controller=>'languages', :action=>'index')} Languages
       - if !current_user.blank? && current_user.has_role?('admin')
-        %a#Submit{:href=>url_for(:controller=>'challenges', :action=>'new')} Submit
+        %a#Submit{:href=>url_for(:controller=>'challenges', :action=>'new')} New Challenge
+        %a#Submit{:href=>url_for(:controller=>'languages', :action=>'new')} New Language
+        %a#Submit{:href=>url_for(:controller=>'users', :action=>'index')} Users
     %p{:style=>'color: green'}= flash[:notice]
     = yield

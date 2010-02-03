@@ -1,0 +1,11 @@
+#content
+  %h1 New challenge
+
+  - form_for(@challenge) do |f|
+    = f.error_messages
+
+    = render :partial => "challenges/form", :locals => { :f => f }
+    %p
+      = f.submit 'Create'
+
+  = link_to 'Back', challenges_path 

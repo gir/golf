@@ -4,19 +4,17 @@
   - if !current_user.blank?
     %p Submit your code!
     - form_for(@submission) do |f|
-      = f.error_messages
-
       = render :partial => "submissions/form", :locals => { :submission => @submission, :languages => @languages, :f => f }
       = hidden_field_tag :challenge_id, @challenge.id
       %p
         = f.submit 'Submit'
+
+  - if !current_user.blank? && current_user.has_role?('admin')
+    = link_to 'Edit', edit_challenge_path(@challenge) | 
+  = link_to 'Back', challenges_path
 
 %p
   %div
     = "No submissions yet." if @challenge.submissions.empty?
     - @challenge.submissions.each do |submission|
       = render :partial => "submissions/submission", :locals => { :submission => submission }
-
-- if !current_user.blank? && current_user.has_role?('admin')
-  = link_to 'Edit', edit_challenge_path(@challenge) | 
-= link_to 'Back', challenges_path

@@ -1,0 +1,9 @@
+#content
+  %p
+    %b Name:
+    = @language.name
+
+  - if !current_user.blank? && current_user.has_role?('admin')
+    = link_to 'Edit', edit_language_path(@language)
+    &nbsp;|&nbsp;
+  = link_to 'Back', languages_path
