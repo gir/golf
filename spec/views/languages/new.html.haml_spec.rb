@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "/languages/new.html.erb" do
+describe "/languages/new.html.haml" do
   include LanguagesHelper
 
   before(:each) do

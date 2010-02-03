@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "/languages/show.html.erb" do
+describe "/languages/show.html.haml" do
   include LanguagesHelper
   before(:each) do
     assigns[:language] = @language = stub_model(Language)

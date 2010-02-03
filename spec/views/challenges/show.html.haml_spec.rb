@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "/challenges/show.html.erb" do
+describe "/challenges/show.html.haml" do
   include ChallengesHelper
 
   before(:each) do
