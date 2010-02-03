@@ -1,114 +1,116 @@
 !!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang=>"en"}
-  %style{:type=>"text/css"}
-    =yield :styles
-    :sass
-      #logo
-        position: absolute
-        left: 15px
-        top: 13px
-      #user_bar
-        position: absolute
-        right: 15px
-        top: 8px
-      #navigation
-        margin-top: 27px
-        height: 30px
-        background-color: #e6f0f4
-        position: relative
-        a
-          position: relative
-          margin: 10px
-          font-size: 12px
-          top: 5px
-          text-decoration: none
-        a:hover
-          text-decoration: underline
-          background-color: none
-      body h1
-        margin-top: 0px
-        margin-bottom: 0px
-        padding-top: 0px
-        padding-bottom: 0px
-        
-      !scoreSize = 70px
-      !answersSize = 55px
-      #challenges
-        width: 100%
-        position: absolute
-        top: 99px
-        .challenge
-          background-color: #d7d7d7
-          margin-top: 3px
-          font-family: arial, sans-serif
-          font-size: 10px
-          min-height: 55px
-          .container .score
-            width= !scoreSize
-            text-align: center
-            .number
-              p
-                font-weight: bold
-                font-size: 16px
-                margin-top: 5px
-              margin: 5px
-              width= !scoreSize - 10px
-              height: 30px
-              border: 1px solid #fff
-              background-color: #81b6c6
-            .label
-              line-height: 0.7
-          .container .answers
-            width= !answersSize
-            text-align: center
-            .number
-              p
-                font-weight: bold
-                font-size: 16px
-                margin-top: 5px
-              margin: 5px
-              width= !answersSize - 10px
-              height: 30px
-              border: 1px solid #fff
-              background-color: #81b6c6
-            .label
-              line-height: 0.7
-          .container .title
-            overflow: hidden
-            margin-left: 29px
-            margin-top: 1px
-            a
-              color: #000
-              text-decoration: none
-              h2
-                font-weight: normal
-                font-size: 18px
-                margin-top: 3px
-                margin-bottom: 5px
-            a:hover
-              text-decoration: underline
-            .description
-              font-size: 10px
-              line-height: 1
-        .alt
-          background-color: #fafafa
-      #submission_code
-        width: 600px
-        height: 40px
-        border: 3px solid #d7d7d7
-      #content
-        padding: 0px 25px
-        border-bottom: 1px solid black
-      #example_output
-        padding: 10px
-        width: 590px
-        background-color: #535155
-        color: #fff
-      
   %head
     %meta{"http-equiv"=>"content-type", :content=>"text/html;charset=UTF-8"}
+    %title
+      = "Golf - #{yield(:title)}"
+    %style{:type=>"text/css"}
+      =yield :styles
+      :sass
+        #logo
+          position: absolute
+          left: 15px
+          top: 13px
+        #user_bar
+          position: absolute
+          right: 15px
+          top: 8px
+        #navigation
+          margin-top: 27px
+          height: 30px
+          background-color: #e6f0f4
+          position: relative
+          a
+            position: relative
+            margin: 10px
+            font-size: 12px
+            top: 5px
+            text-decoration: none
+          a:hover
+            text-decoration: underline
+            background-color: none
+        body h1
+          margin-top: 0px
+          margin-bottom: 0px
+          padding-top: 0px
+          padding-bottom: 0px
+          
+        !scoreSize = 70px
+        !answersSize = 55px
+        #challenges
+          width: 100%
+          position: absolute
+          top: 99px
+          .challenge
+            background-color: #d7d7d7
+            margin-top: 3px
+            font-family: arial, sans-serif
+            font-size: 10px
+            min-height: 55px
+            .container .score
+              width= !scoreSize
+              text-align: center
+              .number
+                p
+                  font-weight: bold
+                  font-size: 16px
+                  margin-top: 5px
+                margin: 5px
+                width= !scoreSize - 10px
+                height: 30px
+                border: 1px solid #fff
+                background-color: #81b6c6
+              .label
+                line-height: 0.7
+            .container .answers
+              width= !answersSize
+              text-align: center
+              .number
+                p
+                  font-weight: bold
+                  font-size: 16px
+                  margin-top: 5px
+                margin: 5px
+                width= !answersSize - 10px
+                height: 30px
+                border: 1px solid #fff
+                background-color: #81b6c6
+              .label
+                line-height: 0.7
+            .container .title
+              overflow: hidden
+              margin-left: 29px
+              margin-top: 1px
+              a
+                color: #000
+                text-decoration: none
+                h2
+                  font-weight: normal
+                  font-size: 18px
+                  margin-top: 3px
+                  margin-bottom: 5px
+              a:hover
+                text-decoration: underline
+              .description
+                font-size: 10px
+                line-height: 1
+          .alt
+            background-color: #fafafa
+        #submission_code
+          width: 600px
+          height: 40px
+          border: 3px solid #d7d7d7
+        #content
+          padding: 0px 25px
+          border-bottom: 1px solid black
+        #example_output
+          padding: 10px
+          width: 590px
+          background-color: #535155
+          color: #fff
     =stylesheet_link_tag 'scaffold'
     =stylesheet_link_tag 'elastic'
+
   %body
     #logo
       =image_tag 'codeSucks.gif'
