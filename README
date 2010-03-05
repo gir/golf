@@ -2,7 +2,7 @@ Golf.
 
 Golf is a Ruby on Rails based scoring/submission site for programmers' golf.
 There are many languages that may be entered and these languages can be edited
-as seen fit. A demo can be seen running at http://golf.cssninja.org
+as seen fit. A demo can be seen running at http://cssninja.org/golf
 
 To run Golf (quick start):
 - git clone git://github.com/pwnies/golf.git
