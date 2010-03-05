@@ -39,7 +39,7 @@
 .submission.on-2.columns
   .user.fixed.column{:style=>'width:250px'}
     %p
-      %a.user-link{:href=>user_path(submission.user)}==#{submission.user.login}
+      %a.user-link{:href=>user_path(submission.user)}==#{submission.user.name}
     %p.time==#{submission.created_at.to_s}
     .container
       .score.column.fixed

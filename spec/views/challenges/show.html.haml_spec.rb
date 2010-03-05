@@ -8,7 +8,9 @@ describe "/challenges/show.html.haml" do
     @submission = mock_model(Submission)
     @language = mock_model(Language)
     @languages = [@language]
-    assigns[:challenge] = @challenge = stub_model(Challenge)
+    assigns[:challenge] = @challenge
+    assigns[:submission] = @submission
+    assigns[:languages] = @languages
     template.stub!(:render).and_return(:partial => "challenges/challenge",
                                        :locals => {:challenge => @challenge})
     template.stub!(:render).and_return(:partial => "submissions/form",
@@ -17,6 +19,11 @@ describe "/challenges/show.html.haml" do
                                                    :f => @f})
     template.stub!(:render).and_return(:partial => "submissions/submission",
                                        :locals => {:sumbission => @submission})
+  end
+
+  it "should render" do
+    render
+    response.should be_success
   end
 
 =begin
